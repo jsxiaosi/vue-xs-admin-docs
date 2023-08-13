@@ -10,9 +10,9 @@
   "devDependencies": {
     "@jsxiaosi/commitlint-config": "^0.0.14",
     "czg": "^1.7.1",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "vite": "^4.4.9",
-    "vitepress": "1.0.0-rc.2",
+    "vitepress": "1.0.0-rc.4",
     "vue": "^3.3.4"
   },
   "config": {
