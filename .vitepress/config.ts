@@ -6,7 +6,7 @@ export default defineConfig({
   description: "一款开箱即用后台模板",
   lastUpdated: true,
   outDir: 'docs/.vitepress/dist',
-  base: '/vue-xs-admin-doc',
+  base: '/vue-xs-admin-docs',
   themeConfig: {
     editLink: {
       pattern: 'https://github.com/jsxiaosi/vue-xs-admin-docs/tree/main/:path',
@@ -43,7 +43,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/jsxiaosi/vue-xs-admin-docs' }
     ]
   }
 })
