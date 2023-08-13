@@ -7,7 +7,7 @@ export default defineConfig({
   lastUpdated: true,
   themeConfig: {
     editLink: {
-      pattern: 'https://github.com/jsxiaosi/xs-components-lib/tree/main/docs/:path',
+      pattern: 'https://github.com/jsxiaosi/vue-xs-admin-docs/tree/main/:path',
       text: '编辑此页面',
     },
     // https://vitepress.dev/reference/default-theme-config
