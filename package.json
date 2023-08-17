@@ -4,6 +4,7 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
+    "build:gitee": "bash ./script/gitee.sh",
     "prepare": "husky install",
     "cz": "czg"
   },
