@@ -288,6 +288,59 @@ const whiteCatalogue = ['root'];
 
 要添加新的模块到白名单，只需将其名称添加到 whiteCatalogue 数组中即可。之后，该页面或模块将自动被项目视为系统内部页面
 
+::: warning 注意
+
+内部模块在注册的时候是和 `'/'` 路由是同级的，如果你的页面需要在 `layout` 中显示，那么你需要为父级路由指定 `layout`
+
+error 页面举例：
+
+```ts
+import type { AppRouteRecordRaw } from '@/router/type';
+import { t } from '@/hooks/web/useI18n';
+
+const Layout = () => import('@/layouts/page-layouts/index.vue'); // [!code ++]
+
+const error: AppRouteRecordRaw[] = [
+  {
+    path: '/error',
+    redirect: '/error/404',
+    name: 'error',
+    alwaysShow: true,
+    component: Layout, // [!code ++]
+    meta: {
+      title: 'route.pathName.error',
+      icon: 'iEL-remove-filled',
+      position: 8,
+      whiteRoute: true,
+    },
+    children: [
+      {
+        path: '403',
+        name: '403',
+        component: () => import('@/views/error/403.vue'),
+        meta: { title: t('route.pathName.error403') },
+      },
+      {
+        path: '404',
+        name: '404',
+        component: () => import('@/views/error/404.vue'),
+        meta: { title: t('route.pathName.error404') },
+      },
+      {
+        path: '500',
+        name: '500',
+        component: () => import('@/views/error/500.vue'),
+        meta: { title: t('route.pathName.error500') },
+      },
+    ],
+  },
+];
+
+export default error;
+```
+
+:::
+
 ## 切换权限
 
 当用户权限发生变化时，用户权限的变化可能会影响其能够访问的路由列表。为了确保路由列表与用户权限保持同步，你可以调用 `initRoute` 方法刷新其可以访问的路由列表

@@ -39,6 +39,29 @@ export default defineConfig({
           { text: '项目规范', link: '/guide/lint' },
           { text: '主题', link: '/guide/theme' },
         ]
+      },
+      {
+        text: '模版',
+        collapsed: false,
+        items: [
+          { text: 'min-xs-admin', link: 'https://github.com/jsxiaosi/min-xs-admin' },
+          { text: 'electron-xs-admin', link: 'https://github.com/jsxiaosi/electron-xs-admin' },
+          { text: 'tauri-xs-admin', link: 'https://github.com/jsxiaosi/tauri-xs-admin' },
+
+        ]
+      },
+      {
+        text: '周边',
+        collapsed: false,
+        items: [
+          { text: '函数工具库', link: 'https://jsxiaosi.gitee.io/utils/' },
+          { text: '规范配置', link: 'https://github.com/jsxiaosi/eslint-config/' },
+          { text: '组件库模版', link: 'https://github.com/jsxiaosi/xs-components-lib' },
+        ]
+      },
+      {
+        text:'常见问题',
+        link:'/guide/issus'
       }
     ],
 

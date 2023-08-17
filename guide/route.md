@@ -228,6 +228,36 @@ export default nested;
 1. path: 需要重定向的路口
 2. query: 路由参数
 
+## 添加外部链接
+
+### 1. 浏览器标签打开新页面  
+
+添加外部链接在路由配置里面把 `path` 路径改成 `外部地址` 即可点击打开新的浏览器标签跳转
+
+```ts
+  {
+    path: 'https://github.com/jsxiaosi/vue-xs-admin',
+    name: 'RtLink',
+    meta: { title: t('route.pathName.thirdParty'), icon: 'link' },
+  },
+```
+
+### 2. 添加内嵌外部页面
+
+添加内嵌页面在 `Meta` 属性中添加 `externalUrl` 参数设置内嵌页面 `Url`，然后再组件中使用 `iframe` 打开 `Url`
+
+```ts
+{
+  path: 'embedded-page',
+  component: () => import('@/views/external-link/embedded-page/index.vue'),
+  name: 'RtGitLink',
+  meta: {
+    title: t('route.pathName.embeddedDocument'),
+    externalUrl: 'https://jsxiaosi.github.io/vue-xs-admin-docs/',
+  },
+},
+```
+
 ## 路由配置说明
 
 `AppRouteRecordRaw` 是在原始的 `Route` 配置基础上进行的扩展，其基础路由设置与 `Route` 保持一致。
@@ -250,6 +280,8 @@ export interface Meta extends RouteMeta {
   pathList?: number[];
   // 角色权限
   roles?: RoleEnum[];
+  // 外部页面地址
+  externalUrl?: string;
 }
 
 export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta' | 'children'> {
