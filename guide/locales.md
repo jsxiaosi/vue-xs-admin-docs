@@ -8,38 +8,33 @@ outline: deep
 
 ## 添加新的语言
 
-1. 在 `src/locales` 目录下创建一个 `zh-HK` 目录
+1. 在 `src/locales/modules` 目录下创建一个 `zh-HK.json` 文件
 
-2. 目录下创建一个 `index.ts` 内容如下：
-
-    ```ts
-    import { defaultFilePath } from '../utils';
-
-    const config: Recordable = import.meta.glob('./modules/*.ts', { eager: true });
-
-    export const name = '中文繁体';
-
-    export default defaultFilePath(config);
-
-    ```
-
-3. 在 `src/locales/zh-HK` 目录下创建一个 `modules` 目录，在目录下创建你的语言资源文件
-
-    举例：`src/locales/zh-HK/modules/route.ts`
-
-    ```ts
-    export default {
-      home: '首頁'
+    ```json
+    {
+      "home": "首頁"
     }
 
     ```
 
-以上步骤即可完成新语言注册
+2. 在 `src/enum/locales` 添加枚举
+
+    ```ts
+    export enum LocalesEnum {
+      EN = 'en',
+      ZHCN = 'zh-CN',
+      ZHHK = 'zh-HK', // [!code ++]
+    }
+    ```
+
+完成以上步骤即可注册新语言
 
 ::: tip
-项目会自动扫描 `src/locales/{language}/modules/` 下的所有 `.ts` 文件。每个文件都被视为一个独立的翻译资源模块。
 
-对于每个资源文件，其文件名（不包括扩展名）将被用作翻译键值的前缀。例如，对于文件 `route.ts`，其中的翻译键值会被前缀为 `route.`，举例 `$t('route.home')`
+项目内置 [`@intlify/unplugin-vue-i18n`](https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n) 插件自动加载国际化资源，无需手动添加引入注册，并且按照官方添加 [`TypeScript`](https://vue-i18n.intlify.dev/guide/advanced/typescript.html) 支持
+
+<img src="./../public/guide/locales/TypeScript.png">
+
 :::
 
 ## 如何使用
@@ -59,9 +54,12 @@ outline: deep
 具体代码
 
 ```ts
+import { LocalesEnum } from '@/enum/locales';
+import { useRootSetting } from '@/hooks/setting/useRootSetting';
+
 const { setAppConfigMode } = useRootSetting();
 const tolochos = () => {
-  setAppConfigMode({ locale: 'zh-HK' });
+  setAppConfigMode({ locale: LocalesEnum.ZHHK });
 };
 ```
 
@@ -100,6 +98,10 @@ const tolochos = () => {
 ## 配合 i18n-ally 插件
 
 项目默认提供了 `i18n-ally` 的配置，只要在你的 `vscode` 安装了 `i18n-ally` 插件即可
+
+<img src="../public/guide/locales/i18n-ally.gif">
+
+### 路由配置
 
 在路由配置中你需要使用 `src/hooks/web/useI18n` 提供的 `t` 函数编写国际化字符串才能实时预览
 
