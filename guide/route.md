@@ -265,11 +265,15 @@ export default nested;
 ```ts
 export interface Meta extends RouteMeta {
   // 菜单标题
-  title: string;
+  title: string | localeTitle;
   // 设置菜单图标
   icon?: string;
   //排序位置 （子路由无效）
   position?: number;
+  // 单个路由的时候是否开启折叠
+  alwaysShow?: boolean;
+  // 不显示侧边栏
+  hideSidebar?: boolean;
   // 是否显示面包屑
   breadcrumb?: boolean;
   // 是否开启缓存
@@ -282,13 +286,11 @@ export interface Meta extends RouteMeta {
   roles?: RoleEnum[];
   // 外部页面地址
   externalUrl?: string;
+  // 不显示标签
+  hideTabs?: boolean;
 }
 
 export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta' | 'children'> {
-  //单个子路由的时候是否开启折叠（默认单个子路由的请求下，子路由会提升显示在菜单栏）
-  alwaysShow?: boolean; 
-  // 不显示菜单栏
-  hidden?: boolean;
   // 子路由配置
   children?: AppRouteRecordRaw[];
   meta?: Meta;

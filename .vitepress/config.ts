@@ -27,7 +27,8 @@ export default defineConfig({
           { text: '项目配置', link: '/guide/config' },
           { text: '路由配置', link: '/guide/route' },
           { text: '菜单栏与面包屑', link: '/guide/menu' },
-          { text: '路由权限配置', link: '/guide/permissions' }
+          { text: '路由权限配置', link: '/guide/permissions' },
+          { text: '标签页', link: '/guide/tabs' }
         ]
       },
       {
@@ -60,8 +61,8 @@ export default defineConfig({
         ]
       },
       {
-        text:'常见问题',
-        link:'/guide/issus'
+        text: '常见问题',
+        link: '/guide/issus'
       }
     ],
 

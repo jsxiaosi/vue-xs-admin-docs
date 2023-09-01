@@ -18,6 +18,10 @@ export interface Meta extends RouteMeta {
   icon?: string; // [!code focus]
   //排序位置 （子路由无效） // [!code focus]
   position?: number; // [!code focus]
+  // 单个路由的时候是否开启折叠 // [!code focus]
+  alwaysShow?: boolean; // [!code focus]
+  // 不显示侧边栏 // [!code focus]
+  hideSidebar?: boolean; // [!code focus]
   // 是否显示面包屑
   breadcrumb?: boolean;
   // 是否开启缓存
@@ -58,11 +62,11 @@ export interface Meta extends RouteMeta {
     path: '/about',
     redirect: '/about/index',
     name: 'RtAdminInfo',
-    alwaysShow: true, 
     meta: { 
       title: t('route.pathName.about'),  
       icon: 'about', // [!code focus]
-      position: 11 
+      position: 11,
+      alwaysShow: true, 
     },
   },
 ```
@@ -76,11 +80,11 @@ export interface Meta extends RouteMeta {
     path: '/about',
     redirect: '/about/index',
     name: 'RtAdminInfo',
-    alwaysShow: true, 
     meta: { 
       title: t('route.pathName.about'),  
       icon: 'about',
-      position: 11  // [!code focus]
+      position: 11,  // [!code focus]
+      alwaysShow: true, 
     },
   },
 ```
@@ -148,8 +152,12 @@ const about: AppRouteRecordRaw[] = [
     path: '/about',
     redirect: '/about/index',
     name: 'RtAdminInfo',
-    alwaysShow: true, // [!code focus]
-    meta: { title: t('route.pathName.about'), icon: 'about', position: 11 },
+    meta: { 
+      title: t('route.pathName.about'), 
+      icon: 'about', 
+      position: 11,    
+      alwaysShow: true, // [!code focus]
+    },
     children: [
       {
         path: 'index',
@@ -182,24 +190,24 @@ const detailsPage: AppRouteRecordRaw[] = [
       {
         path: 'details_info',
         name: 'RtDetailsInfo',
-        hidden: true, // [!code focus]
         meta: {
           title: '',
           icon: 'iEL-management',
           whiteRoute: true,
           keepAlive: true,
+          hideSidebar: true, // [!code focus]
         },
         component: () => import('@/views/details-page/datails-info/index.vue'),
       },
       {
         path: 'details_params/:id',
         name: 'RtDetailsParams',
-        hidden: true, // [!code focus]
         meta: {
           title: '',
           icon: 'iEL-management',
           whiteRoute: true,
           keepAlive: true,
+          hideSidebar: true, // [!code focus]
         },
         component: () => import('@/views/details-page/datails-params/index.vue'),
       },
