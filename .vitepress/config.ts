@@ -37,6 +37,7 @@ export default defineConfig({
         items: [
           { text: '国际化', link: '/guide/locales' },
           { text: 'Svg图标', link: '/guide/icon' },
+          { text: '组件', link: '/guide/component' },
           { text: '项目规范', link: '/guide/lint' },
           { text: '主题', link: '/guide/theme' },
         ]
