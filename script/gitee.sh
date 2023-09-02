@@ -8,8 +8,6 @@ git add .
 
 git commit -m 'feat: ✨ build'
 
-git push
-
 git push git@gitee.com:jsxiaosi/vue-xs-admin-docs.git gitee-page
 
 git checkout main
