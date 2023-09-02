@@ -89,6 +89,6 @@ openDetails({
 
 ```json
 {
-  "closeTabDrag": false //true: 标签页持久化、 false: 关闭标签页持久化
+  "closeTabDrag": false //true: 关闭可拖拽排序、 false: 可拖拽排序
 }
 ```
