@@ -77,6 +77,18 @@ openDetails({
 
 ```json
 {
-  "labelPersistent": false //true: 标签页持久化、 false: 关闭标签页持久化
+  "tabPersistent": false //true: 标签页持久化、 false: 关闭标签页持久化
+}
+```
+
+## 标签拖拽
+
+标签默认情况下是可拖拽排序
+
+通过系统配置文件 `public/serverConfig.json` 控制是否可拖拽排序
+
+```json
+{
+  "closeTabDrag": false //true: 标签页持久化、 false: 关闭标签页持久化
 }
 ```
