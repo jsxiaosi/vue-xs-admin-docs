@@ -154,11 +154,40 @@ outline: deep
     ```
 
 2. 接口返回格式  
-    模拟接口 `mock/demo/route.ts`
+    模拟接口 `mock/route.mock.ts`
 
     ```ts
-    [
+    // 公共路由（任何权限都会返回的路由列表）
+    const power = [
       {
+        path: '/welcome',
+        name: 'RtWelcome',
+      },
+      // ...省略的代码
+    ];
+
+    // admin权限路由
+    const adminPermissionRouter = [
+      {
+        path: '/permissions',
+        name: 'RtPermissions',
+        children: [
+          {
+            path: 'page',
+            name: 'RtPermissionsPage',
+          },
+          {
+            path: 'test-page-admin',
+            name: 'RtPermissionsTestPageAdmin',
+          },
+        ],
+      },
+      // ...省略的代码
+    ];
+
+    // test权限路由
+    const testPermissionRouter = [
+     {
         path: '/permissions',
         name: 'RtPermissions',
         children: [
@@ -172,8 +201,8 @@ outline: deep
           },
         ],
       },
-    ]
-
+    ];
+    // ...省略的代码
     ```
 
 3. 获取路由逻辑  

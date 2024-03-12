@@ -86,6 +86,13 @@ export default test;
 
 路由即可完成注册，不需要手动添加引入，`src/router/modules/index.ts` 默认会 `modules` 目录下的所有 `*.ts` 文件作为路由模块自动注册
 
+::: warning 添加新路由同时需要添加权限
+项目中的路由都是权限控制并且使用了mock模拟数据！添加新路由的同时需要添加权限，否则是不会注册到vue-route也不会在导航栏中显示  
+
+- [角色路由](/guide/permissions.html#角色路由)  
+- [后端路由](/guide/permissions.html#后端路由权限控制)  
+:::
+
 ## 多级路由
 
 ``` ts
@@ -188,6 +195,13 @@ export default nested;
 
 2. 通过组件的形式套在三级路由页面
 
+:::
+
+::: warning 添加新路由同时需要添加权限
+项目中的路由都是权限控制并且使用了mock模拟数据！添加新路由的同时需要添加权限，否则是不会注册到vue-route也不会在导航栏中显示  
+
+- [角色路由](/guide/permissions.html#角色路由)  
+- [后端路由](/guide/permissions.html#后端路由权限控制)  
 :::
 
 ## 开启keepAlive缓存

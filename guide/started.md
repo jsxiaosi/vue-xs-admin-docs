@@ -15,7 +15,7 @@ outline: deep
 
 ## 环境
 
-- [Node.js](http://nodejs.org/) 版本14.x以上
+- [Node.js](http://nodejs.org/) 版本18.x以上
 
 ## 拉取项目
 
