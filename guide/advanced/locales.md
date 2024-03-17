@@ -33,7 +33,7 @@ outline: deep
 
 项目内置 [`@intlify/unplugin-vue-i18n`](https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n) 插件自动加载国际化资源，无需手动添加引入注册，并且按照官方添加 [`TypeScript`](https://vue-i18n.intlify.dev/guide/advanced/typescript.html) 支持
 
-<img src="./../public/guide/locales/TypeScript.png">
+![TypeScript.png](/public/guide/locales/TypeScript.png)
 
 :::
 
@@ -99,7 +99,7 @@ const tolochos = () => {
 
 项目默认提供了 `i18n-ally` 的配置，只要在你的 `vscode` 安装了 `i18n-ally` 插件即可
 
-<img src="../public/guide/locales/i18n-ally.gif">
+![i18n-ally.gif](/public/guide/locales/i18n-ally.gif)
 
 ### 路由配置
 
