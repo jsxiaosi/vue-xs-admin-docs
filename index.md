@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: 在线预览
       link: https://jsxiaosi.github.io/vue-xs-admin/#/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/jsxiaosi/vue-xs-admin
 
 features:
   - icon: 🛠️

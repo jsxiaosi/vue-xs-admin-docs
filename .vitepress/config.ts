@@ -76,7 +76,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/jsxiaosi/vue-xs-admin-docs' }
+      { icon: 'github', link: 'https://github.com/jsxiaosi/vue-xs-admin' }
     ]
   }
 })
