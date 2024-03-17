@@ -35,11 +35,19 @@ export default defineConfig({
         text: '进阶',
         collapsed: false,
         items: [
-          { text: '国际化', link: '/guide/locales' },
-          { text: 'Svg图标', link: '/guide/icon' },
-          { text: '组件', link: '/guide/component' },
-          { text: '项目规范', link: '/guide/lint' },
-          { text: '主题', link: '/guide/theme' },
+          { text: '国际化', link: '/guide/advanced/locales' },
+          { text: 'Svg图标', link: '/guide/advanced/icon' },
+          { text: '组件', link: '/guide/advanced/component' },
+          { text: '项目规范', link: '/guide/advanced/lint' },
+          { text: '主题', link: '/guide/advanced/theme' },
+        ]
+      },
+      {
+        text: 'Electron',
+        collapsed: false,
+        items: [
+          { text: '介绍', link: '/guide/electron/introduce' },
+          { text: 'IPC进程通信', link: '/guide/electron/ipc' }
         ]
       },
       {
